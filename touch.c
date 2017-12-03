@@ -11,6 +11,5 @@ int main(int argc, char *argv[]){
 	if((f = open(argv[1], O_CREATE)) < 0){
 		printf(1, "touch: %s failed to create\n", argv[1]);
 	}
-	
 	exit();
 }
