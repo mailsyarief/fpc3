@@ -36,8 +36,8 @@ int main(int argc, char *argv[]){
 	p2 = length(buf2);
 	if(n1 > 0 || n2 > 0){
 		//printf(1, "masuk ke if\n");
-		while(p1-- || p2--){	
-		//printf(1, "masuk ke while\n");
+		while(p1 || p2){	
+		printf(1, "masuk ke while\n");
 			while(buf1[counter1] != '\n'){
 				hasil[counter] = buf1[counter1];
 				counter++; counter1++;
@@ -47,8 +47,9 @@ int main(int argc, char *argv[]){
 				counter++; counter2++;
 			}
 			hasil[counter] = '\n';
+			p1 -= counter1; p2-=counter2;
 			counter++; counter1++; counter2++;
-		//printf(1, "%s\n", hasil);
+		printf(1, "%s\n", hasil);
 		}
 	}
 	close(f1);
