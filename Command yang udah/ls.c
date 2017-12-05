@@ -30,12 +30,12 @@ ls(char *path)
   struct dirent de;
   struct stat st;
 
-  if((fd = open(path, 0)) < 0){
+  if((fd = open(path, 0)) < 0){ //return value open -> int > 0 file ada, int < 0 file tidak ada)
     printf(2, "ls: cannot open %s\n", path);
     return;
   }
 
-  if(fstat(fd, &st) < 0){
+  if(fstat(fd, &st) < 0){ //return
     printf(2, "ls: cannot stat %s\n", path);
     close(fd);
     return;
@@ -76,9 +76,10 @@ main(int argc, char *argv[])
   int i;
   //input hanya ls tanpa command extra
   if(argc < 2){
-    ls(".");
+    ls("."); //"." untuk melihat semua extensi file
     exit();
   }
+  //masuk kesini ketika ada command extra
   for(i=1; i<argc; i++)
     ls(argv[i]);
   exit();
