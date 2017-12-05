@@ -9,5 +9,11 @@ int main(int argc, char *argv[]){
     exit();
   }  
 
+  if(chdir(argv[1])<0){
+    printf(1,"Failed to change directory\n");
+  }
+  exit();
+}
+
 
 
