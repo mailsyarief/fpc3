@@ -14,7 +14,7 @@ int length(char *input){
 
 int main(int argc, char *argv[]){
 	int n1, n2, f1, f2;
-	char buf1[500], buf2[500], hasil[500];
+	char buf1[700], buf2[700], hasil[1400];
 	//printf(1, "%s\n", argv[1]);
 	//printf(1, "%s\n", argv[2]);
 	
@@ -45,17 +45,40 @@ int main(int argc, char *argv[]){
 				kedua[counters2] = buf2[cs2];
 				counters2++; cs2++;
 			}
-			printf(1, "buf1 : %s\n", pertama);
-			printf(1, "buf2: %s\n", kedua);
+			//printf(1, "buf1 : %s\n", pertama);
+			//printf(1, "buf2: %s\n", kedua);
+			int pbuf1, pbuf2,i, compare = 0;
+			pbuf1 = length(pertama);
+			pbuf2 = length(kedua);
+			//printf(1, "%d\n", pbuf1);
+			//printf(1, "%d\n", pbuf2);
+			if(pbuf1 != pbuf2) compare = 0;
+			else{
+				for(i = 0; i<pbuf1; i++){
+					if(pertama[i]!=kedua[i]) compare = 0;
+					else compare = 1;
+				}
+			}
+			//printf(1, "%d\n", compare);
 			while(buf1[counter1] != '\n'){
 				hasil[counter] = buf1[counter1];
 				counter++; counter1++;
 			}	
 			hasil[counter] = ' ';
-			counter++;		
-			while(buf2[counter2] != '\n'){
+			counter++;
+			if(compare == 0) {
+				printf(1, "WARN : Kata pertama tidak sama!\n");
+				while(buf2[counter2] != '\n'){
 				hasil[counter] = buf2[counter2];
 				counter++; counter2++;
+				}
+			}
+			else{
+				counter2 += counters2+1;				
+				while(buf2[counter2] != '\n'){
+					hasil[counter] = buf2[counter2];
+					counter++; counter2++;
+				}
 			}
 			hasil[counter] = '\n';
 			counter++; counter1++; counter2++;
@@ -66,6 +89,6 @@ int main(int argc, char *argv[]){
 	}
 	close(f1);
 	close(f2);
-	printf(1, "%s\n", hasil);
+	printf(1, "%s", hasil);
 	exit();
 }
