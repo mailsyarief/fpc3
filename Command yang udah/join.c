@@ -3,6 +3,18 @@
 #include "user.h"
 #include "fcntl.h"
 
+char* tokc(char* input){
+	int counter, counterp;
+	counter = 0; counterp = 0;	
+	char* pertama = malloc(50* sizeof(char));
+	while(input[counter]!=' '){
+		pertama[counterp] = input[counter];
+		counterp++; counter++;
+	}
+	return pertama;
+}
+
+
 int length(char *input){
     int length = 0;
     while(input[length]!='\0')  
