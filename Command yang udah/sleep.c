@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	
 	if (sleep_sec > 0)
 	{
-		//masuk ke rekursif
+		
 		sleep(sleep_sec);
 	} 
 	else 
