@@ -49,6 +49,6 @@ int main(int argc, char *argv[]){
 	}
 	
 	close(f1);
-	printf(1, "%s\n", hasil);
+	printf(1, "%s", hasil);
 	exit();
 }
