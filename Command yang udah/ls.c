@@ -35,18 +35,18 @@ ls(char *path)
     return;
   }
 
-  if(fstat(fd, &st) < 0){ //return
+  if(fstat(fd, &st) < 0){ //ngambil info file dari fd di simpan ke st
     printf(2, "ls: cannot stat %s\n", path);
     close(fd);
     return;
   }
 
-  switch(st.type){
-  case T_FILE:
+  switch(st.type){ //ngecek tipe file
+  case T_FILE: //kalo dia file
     printf(1, "%s %d %d %d\n", fmtname(path), st.type, st.ino, st.size);
     break;
 
-  case T_DIR:
+  case T_DIR: //kalo dia direktori
     if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
       printf(1, "ls: path too long\n");
       break;
