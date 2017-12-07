@@ -7,7 +7,9 @@
 int main(int argc, char *argv[])
 {
 	
-	int f;
+if(argc < 2){
+	printf(2, "need 2 arguments\n");
+	}
 
 for(int i=0;i<=argc;i++)
 {
