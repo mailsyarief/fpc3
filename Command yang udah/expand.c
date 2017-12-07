@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 	counter = 0; counterb=0;
 	n = read(f1, buf, sizeof(buf));
 	p = length(buf);
-	printf(1, "%d\n", p);
+	//printf(1, "%d\n", p);
 	if(n > 0){
 		while(p > 0){
 			if(buf[counterb] != '\t'){
@@ -37,14 +37,14 @@ int main(int argc, char *argv[]){
 			}
 			else if(buf[counterb] == '\t'){
 				for(i=1; i<=7;i++){
-					hasil[counter] = 't';
+					hasil[counter] = ' ';
 					counter++;
 				}
 				counterb++;
 			}
 			p--;
-			printf(1, "%d\n", p);
-			printf(1, "%s\n", hasil);
+			//printf(1, "%d\n", p);
+			//printf(1, "%s\n", hasil);
 		}
 	}
 	
