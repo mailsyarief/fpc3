@@ -36,7 +36,7 @@ int main(int argc, char *argv[]){
 				counter++; counterb++;
 			}
 			else if(buf[counterb] == '\t'){
-				for(i=1; i<=7;i++){
+				for(i=1; i<=3;i++){
 					hasil[counter] = ' ';
 					counter++;
 				}
