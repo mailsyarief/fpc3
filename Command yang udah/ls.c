@@ -51,9 +51,11 @@ ls(char *path)
       printf(1, "ls: path too long\n");
       break;
     }
-    strcpy(buf, path);
-    p = buf+strlen(buf);
+
+    strcpy(buf, path); //copy path ke buf
+    p = buf+strlen(buf); 
     *p++ = '/';
+
     while(read(fd, &de, sizeof(de)) == sizeof(de)){
       if(de.inum == 0)
         continue;
